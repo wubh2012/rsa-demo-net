@@ -23,12 +23,29 @@ namespace RSATest
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var token = Guid.NewGuid().ToString().Replace("-", "");
+            var timespan = DateTime.Now.Ticks;
+            txtMing.Text = string.Format("{0}.{1}", token, timespan);
+
+            txtPublicKey.Text = getRsaKey("public.key");
+            txtPrivateKey.Text = getRsaKey("private.key");
+
+        }
+
+        private string getRsaKey(string keyName)
+        {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, keyName);
+            StreamReader sr = new StreamReader(filePath, System.Text.Encoding.UTF8);
+            string result = sr.ReadToEnd();
+            sr.Close();
+            return result;
+
+        }
+
         private void BtnEncrypt_Click(object sender, EventArgs e)
         {
-            //string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Public.key");
-            //StreamReader sr = new StreamReader(filePath, System.Text.Encoding.UTF8);
-            //string publicKey = sr.ReadToEnd();
-            //sr.Close();
 
             txtEncryptData.Text = RSAHelper.encryptByPublicKey(txtPublicKey.Text, txtMing.Text);
 
@@ -38,13 +55,7 @@ namespace RSATest
         {
             txtMing.Text = RSAHelper.decryptByPrivateKey(txtPrivateKey.Text, txtEncryptData.Text);
         }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             var keyDict = RSAHelper.GeneratRsaKey();

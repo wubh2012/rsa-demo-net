@@ -49,7 +49,7 @@
             this.btnDecrypt.Location = new System.Drawing.Point(627, 167);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(75, 23);
-            this.btnDecrypt.TabIndex = 0;
+            this.btnDecrypt.TabIndex = 2;
             this.btnDecrypt.Text = "1 私钥解密";
             this.btnDecrypt.UseVisualStyleBackColor = true;
             this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
@@ -60,7 +60,7 @@
             this.txtMing.Multiline = true;
             this.txtMing.Name = "txtMing";
             this.txtMing.Size = new System.Drawing.Size(425, 94);
-            this.txtMing.TabIndex = 1;
+            this.txtMing.TabIndex = 6;
             // 
             // txtEncryptData
             // 
@@ -68,7 +68,7 @@
             this.txtEncryptData.Multiline = true;
             this.txtEncryptData.Name = "txtEncryptData";
             this.txtEncryptData.Size = new System.Drawing.Size(425, 94);
-            this.txtEncryptData.TabIndex = 2;
+            this.txtEncryptData.TabIndex = 8;
             // 
             // label1
             // 
@@ -76,7 +76,7 @@
             this.label1.Location = new System.Drawing.Point(477, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 5;
             this.label1.Text = "明文";
             // 
             // label2
@@ -85,7 +85,7 @@
             this.label2.Location = new System.Drawing.Point(479, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
-            this.label2.TabIndex = 4;
+            this.label2.TabIndex = 7;
             this.label2.Text = "密文";
             // 
             // BtnEncrypt
@@ -93,7 +93,7 @@
             this.BtnEncrypt.Location = new System.Drawing.Point(534, 167);
             this.BtnEncrypt.Name = "BtnEncrypt";
             this.BtnEncrypt.Size = new System.Drawing.Size(75, 23);
-            this.BtnEncrypt.TabIndex = 5;
+            this.BtnEncrypt.TabIndex = 1;
             this.BtnEncrypt.Text = "1 公钥加密";
             this.BtnEncrypt.UseVisualStyleBackColor = true;
             this.BtnEncrypt.Click += new System.EventHandler(this.BtnEncrypt_Click);
@@ -103,7 +103,7 @@
             this.button2.Location = new System.Drawing.Point(12, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(111, 23);
-            this.button2.TabIndex = 7;
+            this.button2.TabIndex = 0;
             this.button2.Text = "0 生成公钥私钥";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -114,7 +114,7 @@
             this.txtPublicKey.Multiline = true;
             this.txtPublicKey.Name = "txtPublicKey";
             this.txtPublicKey.Size = new System.Drawing.Size(402, 94);
-            this.txtPublicKey.TabIndex = 8;
+            this.txtPublicKey.TabIndex = 10;
             // 
             // label3
             // 
@@ -131,7 +131,7 @@
             this.label4.Location = new System.Drawing.Point(12, 195);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 10;
+            this.label4.TabIndex = 11;
             this.label4.Text = "私钥";
             // 
             // txtPrivateKey
@@ -140,14 +140,14 @@
             this.txtPrivateKey.Multiline = true;
             this.txtPrivateKey.Name = "txtPrivateKey";
             this.txtPrivateKey.Size = new System.Drawing.Size(402, 94);
-            this.txtPrivateKey.TabIndex = 11;
+            this.txtPrivateKey.TabIndex = 12;
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(730, 167);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 12;
+            this.button3.TabIndex = 3;
             this.button3.Text = "2 私钥加密";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -157,7 +157,7 @@
             this.button4.Location = new System.Drawing.Point(829, 167);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
+            this.button4.TabIndex = 4;
             this.button4.Text = "2 公钥解密";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -168,7 +168,7 @@
             this.label5.Location = new System.Drawing.Point(12, 324);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(215, 12);
-            this.label5.TabIndex = 14;
+            this.label5.TabIndex = 13;
             this.label5.Text = "1. 生成的公钥直接复制到 Java 中使用";
             // 
             // Form1
@@ -190,6 +190,9 @@
             this.Controls.Add(this.txtEncryptData);
             this.Controls.Add(this.txtMing);
             this.Controls.Add(this.btnDecrypt);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "C# 与 Java RSA加密互通";

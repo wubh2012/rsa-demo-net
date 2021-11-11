@@ -29,18 +29,31 @@ namespace RSATest
             var timespan = DateTime.Now.Ticks;
             txtMing.Text = string.Format("{0}.{1}", token, timespan);
 
+
             txtPublicKey.Text = getRsaKey("public.key");
             txtPrivateKey.Text = getRsaKey("private.key");
+
+
+
 
         }
 
         private string getRsaKey(string keyName)
         {
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, keyName);
-            StreamReader sr = new StreamReader(filePath, System.Text.Encoding.UTF8);
-            string result = sr.ReadToEnd();
-            sr.Close();
-            return result;
+            if (File.Exists(filePath))
+            {
+                StreamReader sr = new StreamReader(filePath, System.Text.Encoding.UTF8);
+                string result = sr.ReadToEnd();
+                sr.Close();
+                return result;
+            }
+            else
+            {
+                return "";
+            }
+
+
 
         }
 
@@ -55,7 +68,7 @@ namespace RSATest
         {
             txtMing.Text = RSAHelper.decryptByPrivateKey(txtPrivateKey.Text, txtEncryptData.Text);
         }
-        
+
         private void button2_Click(object sender, EventArgs e)
         {
             var keyDict = RSAHelper.GeneratRsaKey();
